@@ -1,4 +1,4 @@
-all: all-apt-get git-config
+all: all-apt-get git-config python
 
 # install all
 all-apt-get:
@@ -7,3 +7,6 @@ all-apt-get:
 git-config:
 	git config --global user.name "NISHIO Hirokazu"
 	git config --global user.email nishio.hirokazu@gmail.com
+
+python:
+	easy-install pip
