@@ -9,4 +9,4 @@ git-config:
 	git config --global user.email nishio.hirokazu@gmail.com
 
 python:
-	easy-install pip
+	easy_install pip
