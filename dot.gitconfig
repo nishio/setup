@@ -1,0 +1,6 @@
+[user]
+	name = NISHIO Hirokazu
+	email = nishio.hirokazu@gmail.com
+[core]
+	editor = emacsclient
+	excludesfile = /Users/nishio/.gitignore_global

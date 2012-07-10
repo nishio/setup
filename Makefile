@@ -7,8 +7,9 @@ minimum:
 	sudo apt-get install -y screen
 
 git-config:
-	git config --global user.name "NISHIO Hirokazu"
-	git config --global user.email nishio.hirokazu@gmail.com
+	cd $(HOME); \
+		ln -s $(SETUP)/dot.gitconfig .gitconfig; \
+		ln -s $(SETUP)/dot.gitignore_global .gitignore_global
 
 emacs:
 	sudo apt-get install -y emacs23-nox
