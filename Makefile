@@ -25,3 +25,7 @@ sshd:
 git:
 	sudo apt-get install -y git-core
 
+zsh:
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
+	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
