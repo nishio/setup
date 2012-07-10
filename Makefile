@@ -1,3 +1,5 @@
+SETUP = $(shell pwd)
+
 all: minimum git-config python
 
 # install all
@@ -10,8 +12,9 @@ git-config:
 
 emacs:
 	sudo apt-get install -y emacs23-nox
-	ln -s dot.emacs.el ~/.emacs.el
-	ln -s dot.emacs.d ~/.emacs.d
+	cd $(HOME); \
+		ln -s $(SETUP)/dot.emacs.el .emacs.el
+		ln -s $(SETUP)/dot.emacs.d .emacs.d
 
 python:
 	easy_install pip
