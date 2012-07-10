@@ -1,8 +1,8 @@
-all: all-apt-get git-config python
+all: minimum git-config python
 
 # install all
-all-apt-get:
-	sudo apt-get install -y emacs23 screen
+minimum:
+	sudo apt-get install -y emacs23-nox screen
 
 git-config:
 	git config --global user.name "NISHIO Hirokazu"
@@ -10,3 +10,9 @@ git-config:
 
 python:
 	easy_install pip
+
+sshd:
+	sudo apt-get install -y openssh-server
+
+git:
+	sudo apt-get install -y git-core
