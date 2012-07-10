@@ -20,3 +20,5 @@ emacs
 - C-r: search backword
 - C-x r k: kill rectangle region
 - C-x RET f: set-buffer-file-coding-system
+
+- tramp-mode: /remotehost:filename or /method:user@remotehost:filename
