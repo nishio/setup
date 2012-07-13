@@ -20,3 +20,16 @@ emacs
 - C-r: search backword
 - C-x r k: kill rectangle region
 - C-x RET f: set-buffer-file-coding-system
+
+bookmark
+--------
+
+- C-x r m: add
+- C-x r b: open
+- C-x r l: list
+
+hosts
+=====
+
+- Mac: /sudo::/private/etc/hosts
+- sudo kill -HUP `cat /var/run/lookupd.pid`
