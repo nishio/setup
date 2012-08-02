@@ -21,4 +21,8 @@ emacs
 - C-x r k: kill rectangle region
 - C-x RET f: set-buffer-file-coding-system
 
-- tramp-mode: /remotehost:filename or /method:user@remotehost:filename
+- tramp-mode:
+
+  - /remotehost:filename
+  - /method:user@remotehost:filename
+  - /multi:ssh:nishio@remote:sudo:root@localhost:/etc/apache2/someconf
