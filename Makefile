@@ -35,3 +35,9 @@ zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
+
+# pubkey login
+pubkey-login:
+       mkdir -p ~/.ssh
+       cat id_rsa.pub >> ~/.ssh/authorized_keys
+       chmod 600 ~/.ssh/authorized_keys
