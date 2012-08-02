@@ -1,15 +1,25 @@
 SETUP = $(shell pwd)
 
-all: minimum git-config python
+# 状況は変わるものだから全自動は求めても仕方がない
 
-# install all
-minimum:
-	sudo apt-get install -y screen
+sshd:
+	sudo apt-get install -y openssh-server
+
+git:
+	sudo apt-get install -y git-core
 
 git-config:
 	cd $(HOME); \
 		ln -s $(SETUP)/dot.gitconfig .gitconfig; \
 		ln -s $(SETUP)/dot.gitignore_global .gitignore_global
+
+
+screen:
+	sudo apt-get install -y screen
+
+
+apt-update:
+	sudo apt-get update
 
 emacs:
 	sudo apt-get install -y emacs23-nox
@@ -20,11 +30,6 @@ emacs:
 python:
 	easy_install pip
 
-sshd:
-	sudo apt-get install -y openssh-server
-
-git:
-	sudo apt-get install -y git-core
 
 zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
