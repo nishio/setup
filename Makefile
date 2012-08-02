@@ -39,6 +39,6 @@ zsh:
 
 # pubkey login
 pubkey-login:
-       mkdir -p ~/.ssh
-       cat id_rsa.pub >> ~/.ssh/authorized_keys
-       chmod 600 ~/.ssh/authorized_keys
+	mkdir -p ~/.ssh
+	cat id_rsa.pub >> ~/.ssh/authorized_keys
+	chmod 600 ~/.ssh/authorized_keys
