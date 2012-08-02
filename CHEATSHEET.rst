@@ -21,8 +21,23 @@ emacs
 - C-x r k: kill rectangle region
 - C-x RET f: set-buffer-file-coding-system
 
-- tramp-mode:
+tramp-mode
+----------
 
   - /remotehost:filename
   - /method:user@remotehost:filename
   - /multi:ssh:nishio@remote:sudo:root@localhost:/etc/apache2/someconf
+
+bookmark
+--------
+
+- C-x r m: add
+- C-x r b: open
+- C-x r l: list
+
+hosts
+=====
+
+- Mac: /sudo::/private/etc/hosts
+- sudo kill -HUP `cat /var/run/lookupd.pid`
+

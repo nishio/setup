@@ -1,20 +1,6 @@
-all: minimum git-config python
+SETUP = $(shell pwd)
 
-# install all
-minimum:
-	sudo apt-get install -y screen
-
-git-config:
-	git config --global user.name "NISHIO Hirokazu"
-	git config --global user.email nishio.hirokazu@gmail.com
-
-emacs:
-	sudo apt-get install -y emacs23-nox
-	ln -s dot.emacs.el ~/.emacs.el
-	ln -s dot.emacs.d ~/.emacs.d
-
-python:
-	easy_install pip
+# 状況は変わるものだから全自動は求めても仕方がない
 
 sshd:
 	sudo apt-get install -y openssh-server
@@ -22,3 +8,30 @@ sshd:
 git:
 	sudo apt-get install -y git-core
 
+git-config:
+	cd $(HOME); \
+		ln -s $(SETUP)/dot.gitconfig .gitconfig; \
+		ln -s $(SETUP)/dot.gitignore_global .gitignore_global
+
+
+screen:
+	sudo apt-get install -y screen
+
+
+apt-update:
+	sudo apt-get update
+
+emacs:
+	sudo apt-get install -y emacs23-nox
+	cd $(HOME); \
+		ln -s $(SETUP)/dot.emacs.el .emacs.el; \
+		ln -s $(SETUP)/dot.emacs.d .emacs.d
+
+python:
+	easy_install pip
+
+
+zsh:
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
+	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
