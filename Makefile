@@ -42,3 +42,8 @@ pubkey-login:
 	mkdir -p ~/.ssh
 	cat id_rsa.pub >> ~/.ssh/authorized_keys
 	chmod 600 ~/.ssh/authorized_keys
+
+
+ack:
+	sudo apt-get install ack-grep
+	sudo cp /usr/bin/ack-grep /usr/bin/ack
