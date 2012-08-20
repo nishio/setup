@@ -25,6 +25,7 @@ tramp-mode
 ----------
 
   - /remotehost:filename
+  - /user@host#port:/home/foo
   - /method:user@remotehost:filename
   - /multi:ssh:nishio@remote:sudo:root@localhost:/etc/apache2/someconf
 
