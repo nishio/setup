@@ -32,16 +32,21 @@ pip:
 	easy_install pip
 
 
-~/.oh-my-zsh:
+oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	mkdir -p installed; touch oh-my-zsh
 
-~/.oh-my-zsh/custom/ascii.zsh-theme:
+ascii-zsh-theme:
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
+	mkdir -p installed; touch ascii-zsh-theme
 
-zsh: ~/.oh-my-zsh ~/.oh-my-zsh/custom/ascii.zsh-theme
+zsh: oh-my-zsh ascii-zsh-theme
+	sudo apt-get install -y zsh
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
+
 # pubkey login
+# この設定をしていないとtramp-modeで編集して保存した際に毎回パスワードを聞かれてしまう
 pubkey-login:
 	mkdir -p ~/.ssh
 	cat id_rsa.pub >> ~/.ssh/authorized_keys
