@@ -20,14 +20,16 @@ emacs
 - C-r: search backword
 - C-x r k: kill rectangle region
 - C-x RET f: set-buffer-file-coding-system
+- hexl-mode: C-M-x to input hex
+
 
 tramp-mode
 ----------
 
-  - /remotehost:filename
-  - /user@host#port:/home/foo
-  - /method:user@remotehost:filename
-  - /multi:ssh:nishio@remote:sudo:root@localhost:/etc/apache2/someconf
+- /remotehost:filename
+- /user@host#port:/home/foo
+- /method:user@remotehost:filename
+- /multi:ssh:nishio@remote:sudo:root@localhost:/etc/apache2/someconf
 
 bookmark
 --------
@@ -36,9 +38,14 @@ bookmark
 - C-x r b: open
 - C-x r l: list
 
+
 hosts
 =====
 
 - Mac: /sudo::/private/etc/hosts
 - sudo kill -HUP `cat /var/run/lookupd.pid`
 
+screen
+======
+
+- C-b/C-d: half-up/down
