@@ -32,9 +32,13 @@ pip:
 	easy_install pip
 
 
-zsh:
+~/.oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+~/.oh-my-zsh/custom/ascii.zsh-theme:
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
+
+zsh: ~/.oh-my-zsh ~/.oh-my-zsh/custom/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
 # pubkey login
