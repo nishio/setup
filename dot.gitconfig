@@ -2,5 +2,5 @@
 	name = NISHIO Hirokazu
 	email = nishio.hirokazu@gmail.com
 [core]
-	editor = emacsclient
+	editor = emacs
 	excludesfile = ~/.gitignore_global
