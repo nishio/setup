@@ -3,4 +3,4 @@
 	email = nishio.hirokazu@gmail.com
 [core]
 	editor = emacsclient
-	excludesfile = /Users/nishio/.gitignore_global
+	excludesfile = ~/.gitignore_global
