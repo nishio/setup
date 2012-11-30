@@ -172,9 +172,6 @@
 (yas/initialize)
 (yas/load-all-directories)
 
- (setq italk-server "192.168.11.2")
-
-
 (require 'flymake)
 (defun flymake-cc-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy

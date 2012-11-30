@@ -29,16 +29,10 @@ pip:
 	easy_install pip
 
 
-oh-my-zsh:
-	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-	mkdir -p installed; touch oh-my-zsh
-
-ascii-zsh-theme:
-	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
-	mkdir -p installed; touch ascii-zsh-theme
-
-zsh: oh-my-zsh ascii-zsh-theme
+zsh:
 	sudo apt-get install -y zsh
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
 scipy:
