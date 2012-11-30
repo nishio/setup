@@ -36,10 +36,23 @@ DISABLE_AUTO_TITLE="true"
 
 function settitle(){ echo -n "]0;$@"; }
 
-alias e="emacsclient"
-alias ec="emacsclient"
-alias gitlog="git log --graph --oneline"
-alias gitmerge="git merge --no-ff"
+if [ `uname` = "Darwin" ]; then
+    alias e="emacsclient"
+elif [ `uname` = "Linux" ]; then
+    alias e="emacs"
+else
+    print "Unknown uname:" `uname`
+fi
+
+# git
+alias gits="git s"
+alias gitst="git st"
+alias gitc="git c"
+alias gitcm="git cm"
+alias gita="git a"
+alias gitl="git l"
+alias gitd="git d"
+alias gitdc="git dc"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
