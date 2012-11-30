@@ -36,7 +36,6 @@
     dc = diff --cached
     f = fetch --prune
     fs = !git f && git su
-    ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
     info = remote show origin
     l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s'
     l2 = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
