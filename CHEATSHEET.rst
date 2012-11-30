@@ -12,15 +12,17 @@ less
 - b: back a page
 - n/N: jump to next/previous match
 - ?<key>: search backword
-
+- n/N: jump to next/previous match
 
 emacs
 =====
 
 - C-r: search backword
 - C-x r k: kill rectangle region
+- C-x r y: yank-rectangle
 - C-x RET f: set-buffer-file-coding-system
 - hexl-mode: C-M-x to input hex
+- M-x delete-trailing-space
 
 
 tramp-mode
@@ -49,3 +51,9 @@ screen
 ======
 
 - C-b/C-d: half-up/down
+
+
+misc
+====
+
+- confirm Ubuntu version: cat /etc/lsb-release
