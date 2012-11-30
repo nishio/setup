@@ -7,8 +7,8 @@ Setup my favorite environment.
 状況は変わるものだから全自動は求めても仕方がない。
 何をする必要があるのかを自然言語ではなく実行可能な形式で書くことに意味がある。
 
-First step
-==========
+Ubuntu on vCenter.in.labs
+=========================
 
 ::
    # on new machine's terminal
