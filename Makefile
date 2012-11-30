@@ -41,6 +41,9 @@ zsh: oh-my-zsh ascii-zsh-theme
 	sudo apt-get install -y zsh
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
+scipy:
+	sudo apt-get install python-numpy python-scipy -y
+
 send_privkey:
 	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
 
