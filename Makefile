@@ -47,12 +47,19 @@ scipy:
 send_privkey:
 	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
 
-# pubkey login
-# この設定をしていないとtramp-modeで編集して保存した際に毎回パスワードを聞かれてしまう
-# 社内githubからのcloneも失敗する
+# 秘密鍵を置く
+# これをしないと社内githubからのcloneが失敗する
+recv_privkey:
+	mkdir -p ~/.ssh
+	mv ~/id_rsa ~/.ssh
+	chmod 600 ~/.ssh/id_rsa
+
+# リポジトリに入れてあるpubkeyを適切に配置
+# この設定をしていないとこのマシンにtramp-modeで接続した場合に
+# 保存するたびに毎回パスワードを聞かれてしまう
 pubkey-login:
 	mkdir -p ~/.ssh
-	cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
+	cat id_rsa.pub >> ~/.ssh/authorized_keys
 	chmod 600 ~/.ssh/authorized_keys
 
 
