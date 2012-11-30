@@ -25,6 +25,14 @@ emacs:
 	sudo apt-get install -y emacs23-nox
 	make yasnippet emacs-settings
 
+e_for_mac:
+	mkdir -p ~/bin
+	cd ~/bin; ln -s `which emacsclient` e
+
+e_for_linux:
+	mkdir -p ~/bin
+	cd ~/bin; ln -s `which emacs` e
+
 yasnippet:
 	cd dot.emacs.d; git clone https://github.com/capitaomorte/yasnippet
 

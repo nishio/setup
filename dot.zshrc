@@ -38,8 +38,12 @@ function settitle(){ echo -n "]0;$@"; }
 
 if [ `uname` = "Darwin" ]; then
     alias e="emacsclient"
+    export EDITOR="emacsclient"
+    OS="Mac"
 elif [ `uname` = "Linux" ]; then
     alias e="emacs"
+    export EDITOR="emacs"
+    OS="Linux"
 else
     print "Unknown uname:" `uname`
 fi
@@ -57,11 +61,12 @@ alias gitig="cat >> .gitignore"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
-export PATH="/Users/nishio/bin:/opt/local/bin:/usr/local/bin:$PATH"
-export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
-
-export EDITOR="emacsclient"
-
+if [ OS = "Mac"]; then
+    export PATH="/Users/nishio/bin:/opt/local/bin:/usr/local/bin:$PATH"
+    export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+else
+    export PATH="/home/nishio/bin:$PATH"
+fi
 # aliasを使っている場合、complete_aliasesしないとパラメータのファイル名などが補完されなくなる
 setopt complete_aliases
 
