@@ -122,33 +122,13 @@
 ;; Load our actionscript-mode extensions.
 (eval-after-load "actionscript-mode" '(load "as-config"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yasnippet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (add-to-list 'load-path "~/.emacs.d/yasnippet")
 (require 'yasnippet)
-
-;;;; http://d.hatena.ne.jp/antipop/20080321/1206090430
-;; 複数のディレクトリからスニペットを読み込む。
-;; yasnippetのsnippetを置いてあるディレクトリ
-(setq yas/root-directory (expand-file-name "~/.emacs.d/yasnippet/snippets"))
-
-;; 自分用スニペットディレクトリ(リストで複数指定可)
-(defvar my-snippet-directories
-  (list (expand-file-name "~/.emacs.d/yasnippet/coderepos_common")
-;        (expand-file-name "~/.emacs.d/yasnippet/coderepos_nishio")
-	(expand-file-name "~/.emacs.d/yasnippet/spark")
-        (expand-file-name "~/.emacs.d/yasnippet/private")
-        (expand-file-name "~/cur/topcoder/tcutils/yasnippet")
-	))
-
-;; yasnippet公式提供のものと、自分用カスタマイズスニペットをロード同名
-;; のスニペットが複数ある場合、あとから読みこんだ自分用のものが優先され
-;; る。また、スニペットを変更、追加した場合、このコマンドを実行すること
-;; で、変更・追加が反映される。
-
-(defun yas/load-all-directories ()
-  (interactive)
-  (yas/reload-all)
-  (mapc 'yas/load-directory-1 my-snippet-directories))
+(yas-global-mode 1)
 
 ;; スニペットディレクトリではバックアップを作らない
 (add-hook
@@ -167,10 +147,6 @@
 
      )))
 
-
-;; yasnippet初期化
-(yas/initialize)
-(yas/load-all-directories)
 
 (require 'flymake)
 (defun flymake-cc-init ()

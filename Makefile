@@ -19,11 +19,22 @@ screen:
 apt-update:
 	sudo apt-get update
 
+## Emacs
+
 emacs:
 	sudo apt-get install -y emacs23-nox
+	make yasnippet emacs-settings
+
+yasnippet:
+	cd dot.emacs.d; git clone https://github.com/capitaomorte/yasnippet
+
+emacs-settings:
 	cd $(HOME); \
 		ln -s $(SETUP)/dot.emacs.el .emacs.el; \
 		ln -s $(SETUP)/dot.emacs.d .emacs.d
+
+##
+
 
 pip:
 	easy_install pip
