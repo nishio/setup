@@ -41,12 +41,15 @@ zsh: oh-my-zsh ascii-zsh-theme
 	sudo apt-get install -y zsh
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
+send_privkey:
+	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
 
 # pubkey login
 # この設定をしていないとtramp-modeで編集して保存した際に毎回パスワードを聞かれてしまう
+# 社内githubからのcloneも失敗する
 pubkey-login:
 	mkdir -p ~/.ssh
-	cat id_rsa.pub >> ~/.ssh/authorized_keys
+	cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
 	chmod 600 ~/.ssh/authorized_keys
 
 
