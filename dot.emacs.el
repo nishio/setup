@@ -169,6 +169,7 @@
 
 
 ;; howm
+(add-to-list 'load-path "~/.emacs.d/plugins/howm-1.4.0/")
 (setq howm-menu-lang 'ja)
 (require 'howm)
 
@@ -179,26 +180,14 @@
 
 ;;(global-set-key "\C-c\C-c" 'my-save-and-kill-buffer)
 ;;howm メモだけに適用したければ, こうかな → 2ch2:415
- (define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)
-
-
-(add-to-list 'load-path "~/.emacs.d/taskpaper/branches/nishio")
-(require 'taskpaper)
-
-(defun taskpaper-and-howm-mode ()
-  (taskpaper-mode) ; major-mode
-  (howm-mode) ; minor-mode
-)
+(define-key howm-mode-map "\C-c\C-c" 'my-save-and-kill-buffer)
 
 (add-to-list 'auto-mode-alist (cons ".howm$" 'howm-mode))
-(add-to-list 'auto-mode-alist (cons "todo.howm$" 'taskpaper-and-howm-mode))
-(add-to-list 'auto-mode-alist (cons "ituka.howm$" 'taskpaper-and-howm-mode))
-(add-to-list 'auto-mode-alist (cons "activity.howm$" 'taskpaper-and-howm-mode))
-(add-to-list 'auto-mode-alist (cons "projects.howm$" 'taskpaper-and-howm-mode))
 
 (server-start)
 
-(require 'gtags)
+; TODO
+;(require 'gtags)
 
 ;; tualeg.el
 (load "/opt/local/share/emacs/site-lisp/tuareg.el")
@@ -216,14 +205,6 @@
 ;; 全部スペースでインデントしましょう
 (add-hook 'rst-mode-hook '(lambda() (setq indent-tabs-mode nil)))
 
-;;
-;; alloy-mode
-(require 'alloy-mode)
-(setq auto-mode-alist
-      (append '(
-		("\\.als$" . alloy-mode)
-		) auto-mode-alist))
-
 ;; flymake
 (add-to-list 'flymake-allowed-file-name-masks
              '("\\.js\\'" flymake-simple-make-init))
@@ -231,7 +212,3 @@
 (add-hook 'java-mode-hook
           '(lambda ()
              (flymake-mode)))
-
-
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
