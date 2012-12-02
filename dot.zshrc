@@ -61,7 +61,7 @@ alias gitig="cat >> .gitignore"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
-if [ OS = "Mac" ]; then
+if [ $OS = "Mac" ]; then
     export PATH="/Users/nishio/bin:/opt/local/bin:/usr/local/bin:$PATH"
     export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 else
