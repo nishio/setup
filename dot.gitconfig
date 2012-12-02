@@ -27,6 +27,7 @@
     # http://blog.blindgaenger.net/advanced_git_aliases.html
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
     a = add
+    ap = add -p
     b = branch -a
     br = browse-remote
     c = commit -v # default

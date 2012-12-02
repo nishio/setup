@@ -58,6 +58,7 @@ alias gitl="git l"
 alias gitd="git d"
 alias gitdc="git dc"
 alias gitig="cat >> .gitignore"
+alias gitap="git ap"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
