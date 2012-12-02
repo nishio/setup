@@ -46,6 +46,7 @@
 
 ;; .emacs.dにパスを通す
 ;; 細々した*.elはここに置く
+;; TODO: ~/.emacs.d/pluginsに移動する
 (add-to-list 'load-path "~/.emacs.d")
 
 
@@ -126,7 +127,7 @@
 ;; yasnippet
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
 

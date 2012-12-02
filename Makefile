@@ -34,7 +34,8 @@ e_for_linux:
 	cd ~/bin; ln -s `which emacs` e
 
 yasnippet:
-	cd dot.emacs.d; git clone https://github.com/capitaomorte/yasnippet
+	mkdir -p dot.emacs.d/plugins
+	cd dot.emacs.d/plugins; git clone https://github.com/capitaomorte/yasnippet
 
 emacs-settings:
 	cd $(HOME); \
