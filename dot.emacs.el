@@ -129,6 +129,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"            ;; personal snippets
+        "~/.emacs.d/plugins/yasnippet/snippets"    ;; the default collection
+        ))
 (yas-global-mode 1)
 
 ;; スニペットディレクトリではバックアップを作らない
