@@ -11,10 +11,12 @@ Ubuntu on vCenter.in.labs
 =========================
 
 ::
+
    # on new machine's terminal
    sudo apt-get install -y openssh-server git-core && ifconfig
 
 ::
+
    # on favorite machine's terminal
    ssh .....
    git clone git@github.com:nishio/setup.git
@@ -24,10 +26,12 @@ Ubuntu on vCenter.in.labs
    make apt-update
 
 ::
+
    # on favorite machine's another terminal
    make send_privkey
 
 ::
+
    # on ssh
    make recv_privkey
    make pubkey-login
