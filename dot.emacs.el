@@ -189,13 +189,11 @@
 
 (add-to-list 'auto-mode-alist (cons ".howm$" 'howm-mode))
 
-(server-start)
+(if (eq window-system 'mac)
+    (server-start))
 
 ; TODO
 ;(require 'gtags)
-
-;; tualeg.el
-(load "/opt/local/share/emacs/site-lisp/tuareg.el")
 
 ;;
 ;; rst-mode
