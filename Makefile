@@ -1,5 +1,8 @@
 SETUP = $(shell pwd)
 
+others: recv_privkey apt-update pubkey-login git-config emacs zsh
+
+
 sshd:
 	sudo apt-get install -y openssh-server
 
