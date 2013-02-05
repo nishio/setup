@@ -145,7 +145,7 @@
 ;; yasnippet
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+;(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 ;(require 'yasnippet)
 ;(setq yas-snippet-dirs
 ;      '("~/.emacs.d/snippets"            ;; personal snippets
@@ -212,7 +212,7 @@
 ;(require 'gtags)
 
 ;; tualeg.el
-(load "/opt/local/share/emacs/site-lisp/tuareg.el")
+;(load "/opt/local/share/emacs/site-lisp/tuareg.el")
 
 ;;
 ;; rst-mode
