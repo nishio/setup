@@ -2,7 +2,6 @@
 	name = NISHIO Hirokazu
 	email = nishio.hirokazu@gmail.com
 [core]
-	editor = e
 	excludesfile = ~/.gitignore_global
 
         # http://stackoverflow.com/questions/136178/git-diff-handling-long-lines
