@@ -24,15 +24,18 @@
 ;; ターミナルの時の設定
 (if (not window-system)
     (progn
-      (global-set-key "\C-down" 'forward-paragraph)
-      (global-set-key "\C-up" 'backward-paragraph)
-      (global-set-key "\C-/" 'undo)))
-
+      ;; C-zはsuspend-frameに割り当てられていたが、C-x C-zでもOKなのでこちらはundoにした
+      (global-set-key "\C-z" 'undo)
+      ; Http://unix.stackexchange.com/questions/47312/control-and-up-down-keys-in-terminal-for-use-by-emacs
+      (define-key input-decode-map "\e[1;5A" [C-up])
+      (define-key input-decode-map "\e[1;5B" [C-down])))
 
 ;;
 ;; carbonEmacsのときだけの設定
 (if (eq window-system 'mac)
     (progn
+      ;; 元々iconify-or-deiconify-frameに割り当てられていたが、要らないのでundoにした
+      (global-set-key "\C-z" 'undo)
       ;; Cmd-WでコピーしているとFirefoxに貼付けた後とかで
       ;; コピーしようとして間違えて閉じたりして悲しいので
       ;; M-c (デフォルトはcapitalize-word)に割り当てる
