@@ -26,7 +26,10 @@
     (progn
       ;; C-zはsuspend-frameに割り当てられていたが、C-x C-zでもOKなのでこちらはundoにした
       (global-set-key "\C-z" 'undo)
-      ; Http://unix.stackexchange.com/questions/47312/control-and-up-down-keys-in-terminal-for-use-by-emacs
+      ;; http://unix.stackexchange.com/questions/47312/control-and-up-down-keys-in-terminal-for-use-by-emacs
+      ;; ターミナルへは「文字」しか送信できない。文字にマッピングされていない「キー」は
+      ;; エスケープシーケンスとして送ることになる。手元の端末エミュレータの設定で、
+      ;; C-downなどがどういうエスケープシーケンスで送られているか確認してそれを設定する
       (define-key input-decode-map "\e[1;5A" [C-up])
       (define-key input-decode-map "\e[1;5B" [C-down])))
 
