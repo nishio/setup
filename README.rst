@@ -13,31 +13,25 @@ Ubuntu on vCenter.in.labs
 ::
 
    # on new machine's terminal
-   sudo apt-get install -y openssh-server git-core && ifconfig
+   sudo apt-get install -y openssh-server git-core make && ifconfig
 
 ::
 
    # on favorite machine's terminal
+   make send_privkey
    ssh .....
    git clone git@github.com:nishio/setup.git
+   # or $ git clone https://github.com/nishio/setup.git
    cd setup
    make screen
    screen
-   make apt-update
-
-::
-
-   # on favorite machine's another terminal
-   make send_privkey
-
-::
-
-   # on ssh
-   make recv_privkey
-   make pubkey-login
-   make git-config # TODO fix Mac/Linux divert
-   make emacs # TODO fix emacs.el
-   make zsh
+   #make recv_privkey
+   #make apt-update
+   #make pubkey-login
+   #make git-config # TODO fix Mac/Linux divert
+   #make emacs # TODO fix emacs.el
+   #make zsh
+   make others
 
 Linux on VirtualBox
 ===================
