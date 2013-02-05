@@ -57,3 +57,5 @@ misc
 ====
 
 - confirm Ubuntu version: cat /etc/lsb-release
+- disk usage: df -hT, du -h | sort -h
+
