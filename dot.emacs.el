@@ -21,6 +21,14 @@
 ;; 行番号へ飛ぶ
 (global-set-key "\C-l" 'goto-line)
 
+;; ターミナルの時の設定
+(if (not window-system)
+    (progn
+      (global-set-key "\C-down" 'forward-paragraph)
+      (global-set-key "\C-up" 'backward-paragraph)
+      (global-set-key "\C-/" 'undo)))
+
+
 ;;
 ;; carbonEmacsのときだけの設定
 (if (eq window-system 'mac)
@@ -70,6 +78,15 @@
   (if (frame-parameter nil 'fullscreen)
       (set-frame-parameter nil 'fullscreen nil)
     (set-frame-parameter nil 'fullscreen 'fullboth)))
+
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+(set-frame-parameter nil 'fullscreen 'fullboth)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
