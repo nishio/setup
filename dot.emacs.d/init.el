@@ -226,6 +226,9 @@
 		("\\.rst$" . rst-mode)
 		) auto-mode-alist))
 
+;; review-mode
+(require 'review-mode)
+
 ;; 背景が黒い場合はこうしないと見出しが見づらい
 (setq frame-background-mode 'dark)
 ;; 全部スペースでインデントしましょう

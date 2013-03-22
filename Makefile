@@ -42,7 +42,6 @@ yasnippet:
 
 emacs-settings:
 	cd $(HOME); \
-		ln -s $(SETUP)/dot.emacs.el .emacs.el; \
 		ln -s $(SETUP)/dot.emacs.d .emacs.d
 
 ##
