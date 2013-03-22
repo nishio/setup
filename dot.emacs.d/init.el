@@ -3,12 +3,52 @@
 (setq-default indent-tabs-mode nil)
 
 ;; 改行時に自動的にtrailing spaceを削る
-(global-set-key "\C-m" 'newline-and-indent)
+(defun remove-trailing-space-then-newline ()
+  (interactive "*")
+  (delete-horizontal-space t)
+  (newline))
+
+(global-set-key "\C-m" 'remove-trailing-space-then-newline)
 
 ;; 行末の空白をめだたせる M-x delete-trailing-whitespaceで削除出来る
 (when
     (boundp 'show-trailing-whitespace)
   (setq-default show-trailing-whitespace t))
+
+;;; 列数の表示
+(column-number-mode 1)
+
+;;; シンボリックリンクの読み込みを許可
+(setq vc-follow-symlinks t)
+
+;;リージョンを[delete][BS]で削除
+(delete-selection-mode 1)
+
+;;対応する括弧に色をつける
+(require 'paren)
+(show-paren-mode 1)
+
+;; HOMEとENDでバッファ先頭とバッファ末尾
+;; 元々は行頭・行末だったが、それはC-a,C-eでやってるので必要ない。
+(global-set-key [home] 'beginning-of-buffer)
+(global-set-key [end] 'end-of-buffer)
+
+
+;; 文字数カウント関数
+(defun count-char-region (start end)
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (let ((lf-num 0))	  ;;改行文字の個数を初期化している。
+        (goto-char start) ;;指定領域の先頭に行く。
+        (while (re-search-forward "[\n\C-m]" end t) ;;改行文字のカウント
+          (setq lf-num (+ 1 lf-num))) ;;(つまり、 search できる度に 1 足す)
+        (message "%d 文字 (除改行文字) : %d 行 : %d 文字 (含改行文字)"
+                 (- end start lf-num) (count-lines start end) (- end start))
+        ))))
+
+;;; シンボリックリンク先のVCS内で更新が入った場合にバッファを自動更新
+(setq auto-revert-check-vc-info t)
 
 ;; JSのインデントを2スペースにする
 (setq js-indent-level 2)
