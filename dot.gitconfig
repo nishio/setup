@@ -24,7 +24,11 @@
 [alias]
     # http://oli.jp/2012/git-powerup/
     # http://blog.blindgaenger.net/advanced_git_aliases.html
+    # aliasの一覧を表示
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+    # mergeの際にconflictが起きたファイルを編集
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; e `f`"
+
     a = add
     ap = add -p
     b = branch -a

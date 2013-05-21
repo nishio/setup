@@ -7,8 +7,8 @@ Setup my favorite environment.
 状況は変わるものだから全自動は求めても仕方がない。
 何をする必要があるのかを自然言語ではなく実行可能な形式で書くことに意味がある。
 
-Ubuntu on vCenter.in.labs
-=========================
+Ubuntu
+======
 
 ::
 
@@ -19,19 +19,18 @@ Ubuntu on vCenter.in.labs
 
    # on favorite machine's terminal
    make send_privkey
+   (it asks target address and password)
    ssh .....
+   git clone https://github.com/nishio/setup.git
+   cd setup
+   make recv_privkey
+   cd ..
+   rm -rf setup
    git clone git@github.com:nishio/setup.git
-   # or $ git clone https://github.com/nishio/setup.git
    cd setup
    make screen
    screen
-   #make recv_privkey
-   #make apt-update
-   #make pubkey-login
-   #make git-config # TODO fix Mac/Linux divert
-   #make emacs # TODO fix emacs.el
-   #make zsh
-   make others
+   make others  # it will do make apt-update pubkey-login git-config emacs zsd
 
 Linux on VirtualBox
 ===================

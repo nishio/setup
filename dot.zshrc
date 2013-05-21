@@ -65,6 +65,7 @@ export HGENCODING="UTF-8"
 if [ $OS = "Mac" ]; then
     export PATH="/Users/nishio/bin:/opt/local/bin:/usr/local/bin:$PATH"
     export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+    export PATH="/usr/local/texlive/2012/bin/universal-darwin:$PATH"
 else
     export PATH="/home/nishio/bin:$PATH"
 fi
