@@ -84,6 +84,7 @@ ack:
 	sudo cp /usr/bin/ack-grep /usr/bin/ack
 
 vmwaretools:
+	sudo apt-get install build-essential
 	cp "/media/VMware Tools/VMwareTools-4.0.0-208167.tar.gz" .
 	tar -xvf VMwareTools-4.0.0-208167.tar.gz
 	cd vmware-tools-distrib; \
