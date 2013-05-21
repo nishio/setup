@@ -1,6 +1,6 @@
 SETUP = $(shell pwd)
 
-others: recv_privkey apt-update pubkey-login git-config emacs zsh
+others: apt-update pubkey-login git-config emacs zsh
 
 
 sshd:
