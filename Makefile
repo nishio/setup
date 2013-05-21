@@ -82,3 +82,9 @@ pubkey-login:
 ack:
 	sudo apt-get install ack-grep
 	sudo cp /usr/bin/ack-grep /usr/bin/ack
+
+vmwaretools:
+	cp "/media/VMware Tools/VMwareTools-4.0.0-208167.tar.gz" .
+	tar -xvf VMwareTools-4.0.0-208167.tar.gz
+	cd vmware-tools-distrib; \
+	echo "\n\n\n\n\n\n\n\n\n\n/usr/src/linux-headers-3.2.0-23/include/" | sudo ./vmware-install.pl
