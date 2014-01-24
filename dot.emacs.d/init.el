@@ -281,3 +281,7 @@
 (add-hook 'java-mode-hook
           '(lambda ()
              (flymake-mode)))
+
+;; markdown-mode
+;(require 'markdown-mode)
+;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
