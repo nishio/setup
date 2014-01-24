@@ -94,9 +94,10 @@ vmwaretools:
 	tar -xvf VMwareTools-4.0.0-208167.tar.gz
 	[ `uname -r` != 3.2.0-23-generic ] || make vmware_fix
 	cd vmware-tools-distrib; \
-	echo "\n\n\n\n\n\n\n\n\n\n/usr/src/linux-headers-`uname -r`/include/" | sudo ./vmware-install.pl
+	echo "\n\n\n\n\n\n\n\n\n\n/usr/src/linux-headers-`uname -r`/include/\n\n\n\n\n\n\n\n\n\n" | sudo ./vmware-install.pl
+	-rm -rf cd vmware-tools-distrib
 
 vmware_fix:
 	# need some fix http://communities.vmware.com/thread/297787?start=0&tstart=0
 	cd /usr/src/linux-headers-`uname -r`/include/linux; \
-	sudo chmod 666 version.h; sudo cat ../generated/utsrelease.h >> version.h; sudo ln -s ../generated/autoconf.h
+	sudo chmod 666 version.h; cat ../generated/utsrelease.h >> version.h; sudo ln -s ../generated/autoconf.h
