@@ -57,7 +57,7 @@ alias gitdc="git dc"
 alias gitig="cat >> .gitignore"
 alias gitap="git ap"
 # 何を変更したか完全に把握している時のための全部入り手抜きコマンド
-alias gita="!git status --short --branch; git add -u; git commit -m 'update'; git push"
+alias gita="git status --short --branch; git add -u; git commit -m 'update'; git push"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
