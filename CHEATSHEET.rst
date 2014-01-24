@@ -58,4 +58,15 @@ misc
 
 - confirm Ubuntu version: cat /etc/lsb-release
 - disk usage: df -hT, du -h | sort -h
+- show cmdline: less /proc/<pid>/cmdline
+- which port are listened?: netstat -tln
 
+
+git
+===
+
+::
+  42.42.42.42$ git init --bare <repos_name>.git
+
+  local$ git remote add origin 42.42.42.42:/home/nishio/<repos_name>.git
+  local$ git push -u origin master
