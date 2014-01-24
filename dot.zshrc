@@ -50,15 +50,14 @@ fi
 
 # git
 alias gits="git s"
-alias gitst="git st"
-alias gitc="git c"
 alias gitcm="git cm"
-alias gita="git a"
 alias gitl="git l"
 alias gitd="git d"
 alias gitdc="git dc"
 alias gitig="cat >> .gitignore"
 alias gitap="git ap"
+# 何を変更したか完全に把握している時のための全部入り手抜きコマンド
+alias gita="!git status --short --branch; git add -u; git commit -m 'upate'; git push"
 
 export LANG=ja_JP.UTF-8
 export HGENCODING="UTF-8"
