@@ -22,17 +22,20 @@ Ubuntu
    # on favorite machine's terminal
    make send_privkey
    (it asks target address and password)
+
    ssh .....
-   git clone https://github.com/nishio/setup.git
-   cd setup
-   make recv_privkey
-   cd ..
-   rm -rf setup
+
+   # receive privkey
+   mkdir -p ~/.ssh; mv ~/id_rsa ~/.ssh; chmod 600 ~/.ssh/id_rsa
+
    git clone git@github.com:nishio/setup.git
    cd setup
    make screen
    screen
    make others  # it will do make apt-update pubkey-login git-config emacs zsd
+
+もしVMWareならVM右クリック→Guest→Install VMWare ToolsしてCDをマウントしてからmake vmwaretoolsする。
+
 
 Linux on VirtualBox
 ===================
