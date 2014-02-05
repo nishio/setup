@@ -106,3 +106,18 @@ vmware_fix:
 
 edit_hotst:
 	sudo e /private/etc/hosts
+
+java:
+	# add-apt-repositoryがないので入れる
+	sudo apt-get install python-software-properties
+	# oracleのJDKがデフォルトのリポジトリには含まれていないので追加する
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install -y oracle-java7-installer
+
+boost:
+	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2/download
+	tar --bzip2 -xf download
+	cd boost_1_55_0/; \
+	./bootstrap.sh && sudo ./b2 install
+	ls /usr/local/libs/python/example/quickstart/
