@@ -44,11 +44,13 @@ emacs-settings:
 	cd $(HOME); \
 		ln -s $(SETUP)/dot.emacs.d .emacs.d
 
+pip:
+	sudo apt-get install -y python-pip
+
 ##
 
 
-pip:
-	easy_install pip
+
 
 
 zsh:
