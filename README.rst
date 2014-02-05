@@ -16,6 +16,8 @@ Ubuntu
    sudo apt-get install -y openssh-server git-core make && ifconfig
 
 ::
+   # name easy rememberable name to the host
+   make edit_hosts
 
    # on favorite machine's terminal
    make send_privkey

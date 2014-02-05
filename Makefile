@@ -101,3 +101,6 @@ vmware_fix:
 	# need some fix http://communities.vmware.com/thread/297787?start=0&tstart=0
 	cd /usr/src/linux-headers-`uname -r`/include/linux; \
 	sudo chmod 666 version.h; cat ../generated/utsrelease.h >> version.h; sudo ln -s ../generated/autoconf.h
+
+edit_hotst:
+	sudo e /private/etc/hosts

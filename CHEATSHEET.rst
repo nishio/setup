@@ -44,7 +44,7 @@ bookmark
 hosts
 =====
 
-- Mac: /sudo::/private/etc/hosts
+- Mac: sudo e /private/etc/hosts
 - sudo kill -HUP `cat /var/run/lookupd.pid`
 
 screen
