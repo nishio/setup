@@ -17,7 +17,7 @@ git-config:
 
 screen:
 	sudo apt-get install -y screen
-
+	cd; ln -s $(SETUP)/dot.screenrc .screenrc
 
 apt-update:
 	sudo apt-get update
