@@ -70,3 +70,10 @@ git
 
   local$ git remote add origin 42.42.42.42:/home/nishio/<repos_name>.git
   local$ git push -u origin master
+
+
+boost python
+============
+
+- install: http://www.boost.org/doc/libs/1_55_0/libs/python/doc/building.html
+
