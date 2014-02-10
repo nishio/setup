@@ -1,6 +1,6 @@
 SETUP = $(shell pwd)
 
-others: apt-update pubkey-login git-config emacs zsh
+others: apt-update pubkey-login git-config emacs zsh fix-locale
 
 
 sshd:
@@ -21,6 +21,11 @@ screen:
 
 apt-update:
 	sudo apt-get update
+
+# fix: "perl: warning: Setting locale failed."
+fix_locale:
+	sudo locale-gen "ja_JP.UTF-8"
+	sudo dpkg-reconfigure locales
 
 ## Emacs
 
