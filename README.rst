@@ -16,23 +16,17 @@ Ubuntu
    sudo apt-get install -y openssh-server git-core make && ifconfig
 
 ::
+
    # name easy rememberable name to the host
    make edit_hosts
 
-   # on favorite machine's terminal
-   make send_privkey
-   (it asks target address and password)
-
-   ssh .....
-
-   # receive privkey
-   mkdir -p ~/.ssh; mv ~/id_rsa ~/.ssh; chmod 600 ~/.ssh/id_rsa
+   ssh -A ...
 
    git clone git@github.com:nishio/setup.git
    cd setup
-   make screen
+   make zsh screen
    screen
-   make others  # it will do make apt-update pubkey-login git-config emacs zsd
+   make others  # it will do make apt-update pubkey-login git-config emacs
 
 もしVMWareならVM右クリック→Guest→Install VMWare ToolsしてCDをマウントしてからmake vmwaretoolsする。
 

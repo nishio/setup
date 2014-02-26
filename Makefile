@@ -1,6 +1,6 @@
 SETUP = $(shell pwd)
 
-others: apt-update pubkey-login git-config emacs zsh fix-locale
+others: apt-update pubkey-login git-config emacs fix-locale
 
 
 sshd:
@@ -52,10 +52,16 @@ emacs-settings:
 pip:
 	sudo apt-get install -y python-pip
 
-##
+
+boost-python:
+	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/download
+	tar xvzf download
+	-rm download
+	cd boost_1_55_0; ./bootstrap.sh && sudo ./b2 install
 
 
-
+mecab:
+	sudo apt-get install -y mecab mecab-naist-jdic python-mecab
 
 
 zsh:
@@ -66,6 +72,9 @@ zsh:
 
 scipy:
 	sudo apt-get install python-numpy python-scipy -y
+
+sklearn:
+	sudo apt-get install -y python-sklearn
 
 send_privkey:
 	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
