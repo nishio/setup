@@ -54,6 +54,7 @@ pip:
 
 
 boost-python:
+	sudo apt-get install libbz2-dev
 	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/download
 	tar xvzf download
 	-rm download
