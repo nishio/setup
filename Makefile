@@ -53,12 +53,14 @@ pip:
 	sudo apt-get install -y python-pip
 
 
-boost-python:
+boost:
 	sudo apt-get install libbz2-dev
-	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/download
-	tar xvzf download
 	-rm download
-	cd boost_1_55_0; ./bootstrap.sh && sudo ./b2 install
+	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2/download
+	tar --bzip2 -xf download
+	mv boost_1_55_0/ ~
+	cd ~/boost_1_55_0/; \
+	./bootstrap.sh && sudo ./b2 install
 
 
 mecab:
@@ -130,9 +132,3 @@ java:
 	sudo apt-get update
 	sudo apt-get install -y oracle-java7-installer
 
-boost:
-	wget http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2/download
-	tar --bzip2 -xf download
-	cd boost_1_55_0/; \
-	./bootstrap.sh && sudo ./b2 install
-	ls /usr/local/libs/python/example/quickstart/
