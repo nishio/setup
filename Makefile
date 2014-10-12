@@ -10,6 +10,8 @@ git:
 	sudo apt-get install -y git-core
 
 git-config:
+	-rm $(HOME)/.gitconfig
+	-rm $(HOME)/.gitignore_global
 	cd $(HOME); \
 		ln -s $(SETUP)/dot.gitconfig .gitconfig; \
 		ln -s $(SETUP)/dot.gitignore_global .gitignore_global
