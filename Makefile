@@ -32,8 +32,7 @@ fix_locale:
 ## Emacs
 
 emacs:
-	sudo apt-get install -y emacs23-nox
-	make yasnippet emacs-settings
+	sudo apt-get install -y emacs24-nox
 
 e_for_mac:
 	mkdir -p ~/bin
