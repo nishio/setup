@@ -60,7 +60,7 @@ misc
 - disk usage: df -hT, du -h | sort -h
 - show cmdline: less /proc/<pid>/cmdline
 - which port are listened?: netstat -tln
-
+- Ubuntu Desktop, show virtual console: C-M-F1~6 
 
 git
 ===
