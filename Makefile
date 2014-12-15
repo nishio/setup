@@ -74,11 +74,15 @@ zsh:
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
-scipy:
-	sudo apt-get install python-numpy python-scipy -y
-
 sklearn:
-	sudo apt-get install -y python-sklearn
+	sudo apt-get install -y build-essential python-dev python-setuptools \
+                     python-numpy python-scipy \
+                     libatlas-dev libatlas3gf-base python-pip
+	pip install --user -U scikit-learn
+
+ipython:
+	sudo apt-get install ipython
+
 
 send_privkey:
 	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
