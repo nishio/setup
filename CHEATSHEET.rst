@@ -61,6 +61,7 @@ misc
 - show cmdline: less /proc/<pid>/cmdline
 - which port are listened?: netstat -tln
 - Ubuntu Desktop, show virtual console: C-M-F1~6 
+- VirtualBox mount shared folder: mount -t vboxsf <name of shared folder:XXX> /share/sf_XXX
 
 git
 ===
