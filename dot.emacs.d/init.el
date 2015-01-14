@@ -1,4 +1,4 @@
-;; -*- encoding: utf-8 -*-
+;; -*- coding: utf-8 -*-
 ;; インデントにタブを使うな。これはバッファローカル変数なのでデフォルト値をここでセットしておく。
 (setq-default indent-tabs-mode nil)
 
@@ -265,6 +265,9 @@
       (append '(
 		("\\.rst$" . rst-mode)
 		) auto-mode-alist))
+
+;; cygwinがC-=を掴んでしまうので変更（C-aはScreenが掴んでしまう）
+(add-hook 'rst-mode-hook '(lambda () (local-set-key "\C-c\C-ca" 'rst-adjust)))
 
 ;; review-mode
 (require 'review-mode)
