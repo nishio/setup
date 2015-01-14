@@ -137,3 +137,7 @@ java:
 	sudo apt-get update
 	sudo apt-get install -y oracle-java7-installer
 
+# Ubuntuではデフォルトで/usr/local/libを読まないのでMeCabやKyTeaのsoが読まれない
+ldconfig:
+	sudo echo /usr/local/lib >> /etc/ld.so.conf
+	sudo ldconfig
