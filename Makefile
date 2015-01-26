@@ -24,6 +24,10 @@ screen:
 apt-update:
 	sudo apt-get update
 
+apt-upgrade:
+	sudo apt-get update
+	sudo apt-get upgrade
+
 # fix: "perl: warning: Setting locale failed."
 fix_locale:
 	sudo locale-gen "ja_JP.UTF-8"
