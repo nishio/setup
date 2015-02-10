@@ -1,6 +1,6 @@
 SETUP = $(shell pwd)
 
-others: apt-update pubkey-login git-config emacs fix-locale
+others: apt-update sshd pubkey-login git-config emacs fix-locale apt-upgrade
 
 
 sshd:
