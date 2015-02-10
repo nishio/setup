@@ -1,4 +1,5 @@
-# curl ... | bash することで最初に諸々必要なものをインストールする
+# wget http://bit.ly/nishiosetup; bash nishiosetup することで最初に諸々必要なものをインストールする
+set -x
 sudo apt-get install -y git-core
 cd
 git clone https://github.com/nishio/setup.git
