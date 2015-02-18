@@ -53,6 +53,14 @@ screen
 - C-b/C-d: half-up/down
 
 
+zsh
+====
+
+- replace extention of files
+  for i in *.PNG;
+  mv $i ${i%.*}.png
+
+
 misc
 ====
 
