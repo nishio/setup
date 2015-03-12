@@ -68,8 +68,8 @@ misc
 - disk usage: df -hT, du -h | sort -h
 - show cmdline: less /proc/<pid>/cmdline
 - which port are listened?: netstat -tln
-- Ubuntu Desktop, show virtual console: C-M-F1~6 
-- VirtualBox mount shared folder: mount -t vboxsf <name of shared folder:XXX> /share/sf_XXX
+- Ubuntu Desktop, show virtual console: C-M-F1~6
+- VirtualBox mount shared folder: sudo mount -t vboxsf <name of shared folder:XXX> /media/sf_XXX
 
 git
 ===
