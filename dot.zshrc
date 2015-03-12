@@ -36,6 +36,14 @@ DISABLE_AUTO_TITLE="true"
 
 function settitle(){ echo -n "]0;$@"; }
 
+if [ -n "$DISPLAY" ]; then
+  echo "$DISPLAY" > DISPLAY
+fi
+
+function get_x(){
+  export DISPLAY=`cat DISPLAY`
+}
+
 if [ `uname` = "Darwin" ]; then
     alias e="emacsclient"
     export EDITOR="emacsclient"
