@@ -22,14 +22,14 @@ screen:
 	cd; ln -s $(SETUP)/dot.screenrc .screenrc
 
 apt-update:
-	sudo apt-get update
+	sudo apt-get update -y
 
 apt-upgrade:
-	sudo apt-get update
-	sudo apt-get upgrade
+	sudo apt-get update -y
+	sudo apt-get upgrade -y
 
 # fix: "perl: warning: Setting locale failed."
-fix_locale:
+fix-locale:
 	sudo locale-gen "ja_JP.UTF-8"
 	sudo dpkg-reconfigure locales
 
