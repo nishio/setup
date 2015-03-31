@@ -31,3 +31,23 @@ Install "Guest Additions"
 共有フォルダはvboxsfグループの権限になっているので自分が読み書きするためには自分をグループに追加する必要がある。
 
   sudo adduser nishio vboxsf
+
+
+Hyper-V
+=======
+
+共有フォルダ的機能はない。Windowsのファイル共有をSambaで読む。
+パスワードでの認証が必要で、ホストのnishioアカウントはICカード認証なので使えず、別途sambaアカウントを作成し読み書き権限を付与した。
+/etc/fstabに下記を追記してsudo mount -a -vすることでマウントできる。
+
+//192.168.137.1/Users/nishio    /home/nishio/winhome     cifs    username=samba,password=*****,iocharset=utf8,sec=ntlm,file_mode=0777,dir_mode=0777 0 0
+
+パスワードを直書きせずに別ファイルにくくりだす方法もあるが、1人使用なので省略。
+
+make sambaしてcifs-utilsを入れることが必要。これはcifs.mountというヘルパープログラムを作り、mountでWindowsファイル共有をファイルシステムとしてマウントできるようにする。
+
+
+PyTTY
+=====
+
+★や●などの記号が半角で表示されてしまいEmacs編集時にカーソル位置が実際の位置とずれる問題は、「Window→Translation→RemoteCharcode: Unicode(CJK)」を選択することで解決できる。

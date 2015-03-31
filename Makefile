@@ -145,3 +145,6 @@ java:
 ldconfig:
 	sudo echo /usr/local/lib >> /etc/ld.so.conf
 	sudo ldconfig
+
+samba:
+	sudo apt-get install -y smbclient cifs-utils
