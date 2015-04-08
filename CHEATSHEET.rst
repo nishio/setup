@@ -70,7 +70,8 @@ misc
 - which port are listened?: netstat -tln
 - Ubuntu Desktop, show virtual console: C-M-F1~6
 - VirtualBox mount shared folder: sudo mount -t vboxsf <name of shared folder:XXX> /media/sf_XXX
-
+- sudo ntpdate ntp.nict.jp
+ 
 git
 ===
 
