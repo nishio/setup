@@ -82,7 +82,7 @@ sklearn:
 	sudo apt-get install -y build-essential python-dev python-setuptools \
                      python-numpy python-scipy \
                      libatlas-dev libatlas3gf-base python-pip
-	pip install --user -U scikit-learn
+	pip install --user -U matplotlib pandas scikit-learn
 
 ipython:
 	sudo apt-get install ipython
