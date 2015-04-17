@@ -71,6 +71,7 @@ misc
 - Ubuntu Desktop, show virtual console: C-M-F1~6
 - VirtualBox mount shared folder: sudo mount -t vboxsf <name of shared folder:XXX> /media/sf_XXX
 - sudo ntpdate ntp.nict.jp
+- less: F <-> Ctrl-C
  
 git
 ===
@@ -87,3 +88,7 @@ boost python
 
 - install: http://www.boost.org/doc/libs/1_55_0/libs/python/doc/building.html
 
+plot
+====
+
+- plt.hist(xs)
