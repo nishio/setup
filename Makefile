@@ -1,3 +1,4 @@
+# put recently modified entry last
 SETUP = $(shell pwd)
 
 others: apt-update sshd pubkey-login git-config emacs fix-locale apt-upgrade
@@ -78,16 +79,6 @@ zsh:
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
-ml:
-	sudo apt-get install -y gcc g++ gfortran build-essential
-	sudo apt-get install -y linux-image-generic libopenblas-dev
-	sudo apt-get install -y libatlas-dev libatlas3gf-base
-	sudo apt-get install -y python-dev python-setuptools python-pip
-	sudo apt-get install -y python-nose python-numpy python-scipy
-	sudo apt-get install -y python-matplotlib
-	sudo apt-get install -y ipython python-pandas python-sklearn
-
-
 send_privkey:
 	python run.py "scp ~/.ssh/id_rsa <target_address>:id_rsa"
 
@@ -148,3 +139,13 @@ ldconfig:
 
 samba:
 	sudo apt-get install -y smbclient cifs-utils
+
+
+ml:
+	sudo apt-get install -y gcc g++ gfortran build-essential
+	sudo apt-get install -y linux-image-generic libopenblas-dev
+	sudo apt-get install -y libatlas-dev libatlas3gf-base
+	sudo apt-get install -y python-dev python-setuptools python-pip
+	sudo apt-get install -y python-nose python-numpy python-scipy
+	sudo apt-get install -y python-matplotlib
+	sudo apt-get install -y ipython python-pandas python-sklearn
