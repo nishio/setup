@@ -78,14 +78,14 @@ zsh:
 	cd ~/.oh-my-zsh/custom; ln -s $(SETUP)/ascii.zsh-theme
 	cd $(HOME); ln -s $(SETUP)/dot.zshrc .zshrc
 
-sklearn:
-	sudo apt-get install -y build-essential python-dev python-setuptools \
-                     python-numpy python-scipy \
-                     libatlas-dev libatlas3gf-base python-pip
-	pip install --user -U matplotlib pandas scikit-learn
-
-ipython:
-	sudo apt-get install ipython
+ml:
+	sudo apt-get install -y gcc g++ gfortran build-essential
+	sudo apt-get install -y linux-image-generic libopenblas-dev
+	sudo apt-get install -y libatlas-dev libatlas3gf-base
+	sudo apt-get install -y python-dev python-setuptools python-pip
+	sudo apt-get install -y python-nose python-numpy python-scipy
+	sudo apt-get install -y python-matplotlib
+	sudo apt-get install -y ipython python-pandas python-sklearn
 
 
 send_privkey:
