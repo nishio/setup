@@ -92,3 +92,5 @@ plot
 ====
 
 - plt.hist(xs)
+- plt.scatter(xs, ys)
+- plt.plot(xs, ys)
