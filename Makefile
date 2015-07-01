@@ -144,8 +144,9 @@ samba:
 ml:
 	sudo apt-get install -y gcc g++ gfortran build-essential
 	sudo apt-get install -y linux-image-generic libopenblas-dev
-	sudo apt-get install -y libatlas-dev libatlas3gf-base
+	sudo apt-get install -y libatlas-dev libatlas3gf-base liblapack3gf
 	sudo apt-get install -y python-dev python-setuptools python-pip
 	sudo apt-get install -y python-nose python-numpy python-scipy
 	sudo apt-get install -y python-matplotlib
 	sudo apt-get install -y ipython python-pandas python-sklearn
+
