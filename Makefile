@@ -29,6 +29,12 @@ apt-upgrade:
 	sudo apt-get update -y
 	sudo apt-get upgrade -y
 
+# Usual upgrade may block.
+# see: http://askubuntu.com/questions/146921/how-do-i-apt-get-y-dist-upgrade-without-a-grub-config-prompt
+apt-upgrade-noninteractive:
+	sudo apt-get update -y
+	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+
 # fix: "perl: warning: Setting locale failed."
 fix-locale:
 	sudo locale-gen "ja_JP.UTF-8"
