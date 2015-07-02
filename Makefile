@@ -3,6 +3,7 @@ SETUP = $(shell pwd)
 
 others: apt-update sshd pubkey-login git-config emacs fix-locale apt-upgrade
 
+in-docker: apt-update git-config emacs fix-locale apt-upgrade-noninteractive
 
 sshd:
 	sudo apt-get install -y openssh-server
@@ -26,13 +27,11 @@ apt-update:
 	sudo apt-get update -y
 
 apt-upgrade:
-	sudo apt-get update -y
 	sudo apt-get upgrade -y
 
 # Usual upgrade may block.
 # see: http://askubuntu.com/questions/146921/how-do-i-apt-get-y-dist-upgrade-without-a-grub-config-prompt
 apt-upgrade-noninteractive:
-	sudo apt-get update -y
 	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 
 # fix: "perl: warning: Setting locale failed."
