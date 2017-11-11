@@ -155,3 +155,45 @@ ml:
 	sudo apt-get install -y python-matplotlib
 	sudo apt-get install -y ipython python-pandas python-sklearn
 
+nfs-server:
+	sudo apt-get install nfs-kernel-server
+
+nfs-client:
+	sudo apt-get install nfs-common
+	sudo groupadd nfs
+	sudo groupmod -g 1001 nfs
+	id ec2-user
+	# usermod -G wheel,nfs ec2-user
+	# ※既に別のサブグループに所属している場合は、所属済みのグループの最後に指定する。
+	sudo mkdir -p -m 775 /mnt/nfs
+	sudo chown root:nfs /mnt/nfs
+
+nfs-showmount:
+	showmount -e <NFS server name>
+
+nfs-autorun:
+	sudo chkconfig --level 345 nfs on
+	sudo chkconfig --list | grep nfs
+
+cuda8:
+	# http://qiita.com/yukoba/items/3692f1cb677b2383c983
+	sudo apt update
+	sudo apt upgrade
+
+	wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+	cat 7fa2af80.pub | sudo apt-key add -
+
+	wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
+	sudo dpkg -i cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
+	sudo apt update
+
+	sudo apt install -y linux-generic
+	sudo apt install -y cuda nvidia-367
+	sudo reboot
+
+	sudo apt remove linux-virtual
+	sudo apt autoremove
+
+	rm 7fa2af80.pub cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
+
+
