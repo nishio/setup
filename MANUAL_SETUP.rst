@@ -51,3 +51,37 @@ PyTTY
 =====
 
 ★や●などの記号が半角で表示されてしまいEmacs編集時にカーソル位置が実際の位置とずれる問題は、「Window→Translation→RemoteCharcode: Unicode(CJK)」を選択することで解決できる。
+
+
+ipython
+=======
+
+ipython profile create
+
+c.InteractiveShellApp.extensions = ['autoreload']
+c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+
+not automated yet
+=================
+
+EC2やRasPiなどデフォルトユーザがnishioでないケース
+
+sudo useradd nishio
+sudo usermod -G sudo nishio
+sudo passwd nishio
+id
+id nishio
+# もしグループの指定が足りてなければさらにusermodする
+
+cd /home
+sudo mkdir nishio
+sudo chown nishio:nishio nishio
+
+
+# Python.h: No such file or directory
+sudo apt-get install python-dev
+
+# Pillow
+
+sudo apt-get install zlib1g-dev
+sudo apt-get install libjpeg8-dev
